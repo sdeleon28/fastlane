@@ -6,6 +6,8 @@ gem "danger", "~> 8.0"
 gem "danger-junit", "~> 1.0"
 gem "ox", "2.13.2"
 
+gem "sirp", git: "https://github.com/snatchev/sirp.git"
+
 gemspec(path: ".")
 
 plugins_path = File.join(File.expand_path("..", __FILE__), 'fastlane', 'Pluginfile')
