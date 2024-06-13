@@ -371,15 +371,16 @@ module Deliver
     end
 
     def self.resolve_ipadpro_conflict_if_needed(screen_size, filename)
-      is_3rd_gen = [
-        "iPad Pro (12.9-inch) (3rd generation)", # Default simulator has this name
-        "iPad Pro (12.9-inch) (4th generation)", # Default simulator has this name
-        "iPad Pro (12.9-inch) (5th generation)", # Default simulator has this name
-        "iPad Pro (12.9-inch) (6th generation)", # Default simulator has this name
-        "IPAD_PRO_3GEN_129", # Screenshots downloaded from App Store Connect has this name
-        "ipadPro129" # Legacy: screenshots downloaded from iTunes Connect used to have this name
+      is_newer = [
+        "13-inch",
+        # "iPad Pro (12.9-inch) (3rd generation)", # Default simulator has this name
+        # "iPad Pro (12.9-inch) (4th generation)", # Default simulator has this name
+        # "iPad Pro (12.9-inch) (5th generation)", # Default simulator has this name
+        # "iPad Pro (12.9-inch) (6th generation)", # Default simulator has this name
+        # "IPAD_PRO_3GEN_129", # Screenshots downloaded from App Store Connect has this name
+        # "ipadPro129" # Legacy: screenshots downloaded from iTunes Connect used to have this name
       ].any? { |key| filename.include?(key) }
-      if is_3rd_gen
+      if is_newer
         if screen_size == ScreenSize::IOS_IPAD_PRO
           return ScreenSize::IOS_IPAD_PRO_12_9
         elsif screen_size == ScreenSize::IOS_IPAD_PRO_MESSAGES
