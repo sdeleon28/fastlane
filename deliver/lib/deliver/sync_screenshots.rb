@@ -190,7 +190,7 @@ module Deliver
     def create_sort_worker
       FastlaneCore::QueueWorker.new do |app_screenshot_set|
         original_ids = app_screenshot_set.app_screenshots.map(&:id)
-        sorted_ids = Naturally.sort(app_screenshot_set.app_screenshots, by: :file_name).map(&:id)
+        sorted_ids = app_screenshot_set.app_screenshots.sort_by(&:file_name).map(&:id)
         if original_ids != sorted_ids
           app_screenshot_set.reorder_screenshots(app_screenshot_ids: sorted_ids)
         end
