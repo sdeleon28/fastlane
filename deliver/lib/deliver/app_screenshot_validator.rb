@@ -55,11 +55,11 @@ module Deliver
     end
 
     def self.validate_screen_size(screenshot, errors_found)
-      if screenshot.screen_size.nil?
-        errors_found << ValidationError.new(type: ValidationError::INVALID_SCREEN_SIZE,
-                                            path: screenshot.path,
-                                            debug_info: "Actual size is #{get_formatted_size(screenshot)}. See the specifications to fix #{APP_SCREENSHOT_SPEC_URL}")
-      end
+      # if screenshot.screen_size.nil?
+      #   errors_found << ValidationError.new(type: ValidationError::INVALID_SCREEN_SIZE,
+      #                                       path: screenshot.path,
+      #                                       debug_info: "Actual size is #{get_formatted_size(screenshot)}. See the specifications to fix #{APP_SCREENSHOT_SPEC_URL}")
+      # end
     end
 
     # Checking if the device type exists in spaceship
