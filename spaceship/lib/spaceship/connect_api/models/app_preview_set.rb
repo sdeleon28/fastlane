@@ -18,7 +18,6 @@ module Spaceship
         IPHONE_58 = "IPHONE_58"
         IPHONE_65 = "IPHONE_65"
         IPHONE_67 = "IPHONE_67"
-        IPHONE_63 = "IPHONE_63"
 
         IPAD_97 = "IPAD_97"
         IPAD_105 = "IPAD_105"
@@ -36,7 +35,6 @@ module Spaceship
           IPHONE_58,
           IPHONE_65,
           IPHONE_67,
-          IPHONE_63,
 
           IPAD_97,
           IPAD_105,
